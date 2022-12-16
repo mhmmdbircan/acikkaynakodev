@@ -26,4 +26,34 @@ catch (IOException e) {
 // TODO Auto-generated catch block
 e.printStackTrace();
 }
+ 
+ /*DOSYA OKUMA*/
+try {
+File dosya = new File(dosyaYolu);
+ 
+BufferedReader oku = new BufferedReader(
+new InputStreamReader(
+new FileInputStream(dosya), "UTF8"));
+ 
+String str;
+ 
+while ((str = oku.readLine()) != null) {
+System.out.println(str);
+}
+ 
+oku.close();
+} 
+catch (UnsupportedEncodingException e) 
+{
+System.out.println(e.getMessage());
+} 
+catch (IOException e) 
+{
+System.out.println(e.getMessage());
+}
+catch (Exception e)
+{
+System.out.println(e.getMessage());
+}
+ 
 }
